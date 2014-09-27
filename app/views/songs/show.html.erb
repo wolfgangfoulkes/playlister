@@ -1,13 +1,15 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
-  <%= @song.name %> <br>
-  <strong>Artist:</strong>
-  <%= @song.artist %> <br>
-  <strong>Album:</strong>
-  <%= @song.album %> <br>
+	<strong>Playlist:</strong>
+	<%= Playlist.find(@song.playlist_id).title %> <br>
+	<strong>Name:</strong>
+	<%= @song.name %> <br>
+	<strong>Artist:</strong>
+	<%= @song.artist %> <br>
+	<strong>Album:</strong>
+	<%= @song.album %> <br>
 </p>
 
 <%= link_to 'Edit', edit_song_path(@song) %> |
-<%= link_to 'Back', songs_path %>
+<%= link_to 'Back', Playlist.find(@song.playlist_id) %>

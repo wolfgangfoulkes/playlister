@@ -1,0 +1,8 @@
+<h1>Playlister</h1>
+
+<% @Playlists.each do |playlist| %>
+	<tr>
+		<td><%= link_to playlist.title, playlist %> </td>
+	</tr>
+
+<% end %>

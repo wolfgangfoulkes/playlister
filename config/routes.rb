@@ -7,6 +7,8 @@ Rails.application.routes.draw do
 
   resources :playlists
 
+  get '/playlists/:id/add_song', to: 'playlists#add_song'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

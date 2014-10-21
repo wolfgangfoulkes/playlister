@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require foundation
 //= require turbolinks
 //= require_tree .
 
@@ -26,3 +27,9 @@ $(document).on('page:change', function(evt) {
 function init() {
     console.log('ready!');
 }
+
+$(function(){ $(document).foundation(); });
+
+SC.initialize({
+    client_id: "a75a2c80d1ea64e4704553a641f17500", /*from the registered app on my user on soundcloud*/
+  });

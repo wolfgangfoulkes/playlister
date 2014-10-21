@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140927022517) do
+ActiveRecord::Schema.define(version: 20141020211557) do
 
   create_table "playlists", force: true do |t|
     t.string   "title"
@@ -27,6 +27,10 @@ ActiveRecord::Schema.define(version: 20140927022517) do
     t.string   "album"
     t.string   "name"
     t.integer  "songs_id"
+    t.string   "sc_id"
+    t.string   "sc_permalink"
+    t.string   "sc_permalink_url"
+    t.string   "sc_uri"
   end
 
 end

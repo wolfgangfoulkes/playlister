@@ -6,10 +6,11 @@ gem 'rails', '4.1.5'
 # Use sqlite3 as the database for Active Record
 group :development do
   	gem 'sqlite3'
-	gem 'rails_12factor'
+
 end
 group :production do
   gem 'pg'
+  gem 'rails_12factor'
 end
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0.0.beta1'
@@ -44,4 +45,6 @@ gem 'spring',        group: :development
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+gem 'devise'
 

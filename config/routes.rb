@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
-  #get 'site/index'
 
-  root 'playlists#index'
+  root 'static_pages#home'
 
   resources :songs
 

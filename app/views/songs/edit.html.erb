@@ -2,5 +2,5 @@
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @song %> |
-<%= link_to 'Back', playlists_path %>
+<%= link_to 'Show', playlist_song_path(@playlist, @song) %> |
+<%= link_to 'Back', @playlist %>

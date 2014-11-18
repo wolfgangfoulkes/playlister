@@ -3,9 +3,11 @@ Rails.application.routes.draw do
   devise_for :users
   root 'static_pages#home'
 
-  resources :songs
+  
 
-  resources :playlists
+  resources :playlists do 
+    resources :songs
+  end
 
   get '/playlists/:id/add_song', to: 'playlists#add_song', as: 'add_song'
 

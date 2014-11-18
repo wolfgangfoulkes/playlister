@@ -9,7 +9,7 @@
   			<td> <em> name: </em> <%= song.name %> </td>
   			<td> <em> artist: </em> <%= song.artist %> </td>
   			<td> <em> album: </em><%= song.album %> </td>
-        <td><%= link_to 'Show', song %></td>
+        <td><%= link_to 'Show', playlist_song_path(@playlist, song) %></td>
       </tr>
   			<br>
   		</tr>

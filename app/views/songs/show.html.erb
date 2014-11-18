@@ -2,7 +2,7 @@
 
 <p>
 	<strong>Playlist:</strong>
-	<%= Playlist.find(@song.playlist_id).title %> <br>
+	<%= @playlist.title %> <br>
 	<strong>Name:</strong>
 	<%= @song.name %> <br>
 	<strong>Artist:</strong>
@@ -11,5 +11,5 @@
 	<%= @song.album %> <br>
 </p>
 
-<%= link_to 'Edit', edit_song_path(@song) %> |
-<%= link_to 'Back', Playlist.find(@song.playlist_id) %>
+<%= link_to 'Edit', edit_playlist_song_path(@song.playlist, @song) %> |
+<%= link_to 'Back', @song.playlist %> <!-- something's wrong right here -->

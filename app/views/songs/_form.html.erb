@@ -1,14 +1,23 @@
 
-<div class-"field">
-  <label for "sc-search"> search soundCloud </label>
-  <input id="sc-search" type="text"/>
-  <button id="sc-search-bttn"> search </button>
+<script src="https://apis.google.com/js/client.js?onload=function"></script> <!-- don't think I need this -->
+
+<div class="field">
+  <label for "wf-search"><br/></label>
+  <input id="wf-search" type="text"/>
+  <button id="wf-search-bttn" class="button"> search </button>
 </div>
 
-<!--   <div class="row"> -->
-    <div id="sc-results"> <!-- class="small-2 column"> -->
+<div class="wf-row">
+
+    <div class="wf-column search-results" id="sc-results"> 
+      <!-- dummy, to keep track of added classes, good practice. removed and added -->
+      <div class="search-results-source hidden"> SoundCloud </div> 
     </div>
-<!--   </div> -->
+
+    <div class="wf-column search-results" id="yt-results"> 
+      <div class="search-results-source hidden"> YouTube </div>
+    </div>
+</div>
 
 
 <%= form_for([@playlist, @song]) do |f| %>
@@ -24,18 +33,36 @@
     </div>
   <% end %>
 
-   <div class="field">
+   <div class="field hidden">
     <%= f.label :name %>
     <%= f.text_field :name %>
   </div>
   <div class="field hidden">
-    <%= f.label :artist %>
-    <%= f.text_field :artist %>
+    <%= f.label :image_url_small %>
+    <%= f.text_field :image_url_small %>
   </div>
   <div class="field hidden">
-    <%= f.label :album %>
-    <%= f.text_field :album %>
+    <%= f.label :image_url_medium %>
+    <%= f.text_field :image_url_medium %>
   </div>
+  <div class="field hidden">
+    <%= f.label :image_url_large %>
+    <%= f.text_field :image_url_large %>
+  </div>
+  <div class="field hidden">
+    <%= f.label :src_type %>
+    <%= f.text_field :src_type %>
+  </div>
+  <!-- youtube -->
+  <div class="field hidden">
+    <%= f.label :yt_id %>
+    <%= f.text_field :yt_id %>
+  </div>
+  <div class="field hidden">
+    <%= f.label :yt_etag %>
+    <%= f.text_field :yt_etag %>
+  </div>
+  <!-- soundcloud -->
   <div class="field hidden">
     <%= f.label :sc_id %>
     <%= f.text_field :sc_id %>
@@ -52,7 +79,12 @@
     <%= f.label :sc_uri %>
     <%= f.text_field :sc_uri %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="field hidden">
+    <%= f.label :artist %>
+    <%= f.text_field :artist %>
+  </div>
+  <div class="field hidden">
+    <%= f.label :album %>
+    <%= f.text_field :album %>
   </div>
 <% end %>

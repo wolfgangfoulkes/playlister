@@ -3,5 +3,25 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 body {
-	margin-left: 2vw;
+}
+
+.hidden {
+	display: none !important;
+}
+
+.button {
+	color: white;
+	background-color: rgba(0, 0, 0, 1);
+}
+
+.button a {
+	color: white;
+}
+
+.hlink-reset {
+	color: inherit;
+}
+
+.hlink-reset:hover {
+	color: inherit;
 }

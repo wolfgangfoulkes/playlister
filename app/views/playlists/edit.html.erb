@@ -1,22 +1,39 @@
-<h1>Editing playlist</h1>
-
-<%= render 'form' %>
 
 
-   <strong>Songs:</strong>
-  	<div class= "song-list">
-  	<%= @playlist.songs.find_each do |song| %>
-  		<tr>
-  			<td> <em> name: </em> <%= song.name %> </td>
-  			<td> <em> artist: </em> <%= song.artist %> </td>
-  			<td> <em> album: </em><%= song.album %> </td>
-  			<td><%= link_to 'Edit', edit_playlist_song_path(@playlist, song) %></td>
-  			<td> <%= link_to 'Destroy', [@playlist, song], method: :delete, data: { confirm: 'Are you sure?' } %> </td>
-  			<br>
-  		</tr>
-  	<% end %>
+<div class= "row pages">
+  <div class= "left-page">
+    <div class = "small-10 large-6 columns">
+      <div class="playlist-title"><%= @playlist.title %></div>
+    	<div class= "song-list">
+      	<%= @playlist.songs.find_each.with_index do |song, index| %>
+      		<tr> <div class="list-song">
+            <%= link_to "", @song, method: :delete, data: { confirm: 'Are you sure?' }, :class=>"destroy hidden" %>
+            <td> <div class="index hidden"> <%= index %> </div> </td>
+      			<td> <div class="song-title"> <%= song.name %> </div> </td>
+            <div class="song-info hidden">
+              <td> <em> source: </em> <%= song.src_type %> </td>
+            </div>
+
+      		</div></tr>
+      	<% end %>
+      </div> <!-- song list -->
+    </div> <!-- column -->
+  </div> <!-- left-page -->
+  <div class = "right-page">
+    <div class = "small-10 large-6 columns">
+      <% @song = Song.new %>
+      <%= render 'songs/form'%>
+    </div>
+  </div> <!-- right-page -->
+</div> <!-- row pages-->
+
+<div class = "row">
+  <div class = "small-10 large-6 columns action-bar">
+    <ul class= "button-group round">
+      <li><div class="button change-page">+</div></li>
+      <li><div class="button remove">-</div></li>
+    </ul>
   </div>
+</div>
 
-<%= link_to 'Add New', add_song_path %> |
-<%= link_to 'Show', @playlist %> |
-<%= link_to 'Back', playlists_path %>
+

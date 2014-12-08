@@ -12,12 +12,15 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require foundation
 //= require turbolinks
+//= require foundation
 //= require_tree .
+
+
 
 $(document).on('ready', function() {
     $(document).foundation();
+    console.log("document ready!");
 });
 
 $(document).on('page:change', function(evt) {
@@ -25,6 +28,7 @@ $(document).on('page:change', function(evt) {
 });
 
 function init() {
+	console.log('page change!');
     console.log('ready!');
 }
 

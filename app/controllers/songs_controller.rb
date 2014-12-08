@@ -31,7 +31,8 @@ class SongsController < ApplicationController
 
     respond_to do |format|
       if @song.save
-        format.html { redirect_to [@playlist, @song], notice: 'Song was successfully created.' }
+        # format.html { redirect_to [@playlist, @song], notice: 'Song was successfully created.' }
+        format.html { redirect_to edit_playlist_path(@playlist), notice: 'Song was successfully created.' }
         format.json { render :show, status: :created, location: @song }
       else
         format.html { render :new }
@@ -45,7 +46,7 @@ class SongsController < ApplicationController
   def update
     respond_to do |format|
       if @song.update(song_params)
-        format.html { redirect_to [@playlist, @song], notice: 'Song was successfully updated.' }
+        format.html { redirect_to edit_playlist_path(@playlist), notice: 'Song was successfully updated.' }
         format.json { render :show, status: :ok, location: @song }
       else
         format.html { render :edit }
@@ -59,7 +60,7 @@ class SongsController < ApplicationController
   def destroy
     @song.destroy
     respond_to do |format|
-      format.html { redirect_to [@playlist], notice: 'Song was successfully destroyed.' }
+      format.html { redirect_to edit_playlist_path(@playlist), notice: 'Song was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -72,7 +73,7 @@ class SongsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def song_params
-      params.require(:song).permit(:name, :playlist_id, :artist, :album, :sc_id, :sc_permalink, :sc_permalink_url, :sc_uri)
+      params.require(:song).permit(:name, :playlist_id, :src_type, :yt_id, :yt_etag, :yt_url, :image_url_small, :image_url_medium, :image_url_large, :sc_id, :sc_permalink, :sc_permalink_url, :sc_uri, :artist, :album)
     end
 
     def set_playlist

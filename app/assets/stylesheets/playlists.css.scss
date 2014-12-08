@@ -1,3 +1,143 @@
 // Place all the styles related to the playlists controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.method {
+}
+
+.playlist-list {
+	display: flex;
+/*	display: -webkit-flex;*/
+	flex-direction: column;
+/*	-webkit-flex-direction: column;*/
+	width: 50vw;
+	height: 90vh;
+	margin-right: auto;
+	margin-left: auto;
+	justify-content: center;
+}
+
+.playlist-list-title {
+	color: rgba(100, 0, 0, 0.2);
+}
+
+.playlist {
+	box-sizing: border-box;
+	flex-shrink: 2;
+	padding-top: 3em;
+	padding-bottom: 3em;
+	border-top: 1px solid rgba(100, 0, 0, 0.2);
+
+	position: relative;
+}
+
+.playlist:hover {
+	background-color: rgba(100, 0, 0, 0.2);
+}
+
+.playlist .title {
+	font-size: 2em;
+	line-height: 0;
+	text-align: center;
+}
+
+.playlists-methods {
+	display: flex;
+	width: 100%;
+}
+
+.playlists-methods .button {
+	flex-grow: 1;
+}
+
+.playlists-methods .button.remove {
+	background-color: rgba(100, 0, 0, 0.2);
+	color: black;
+}
+
+.button.remove.selected {
+	background-color: rgba(155, 0, 0, 1);
+	color: white;
+}
+
+.destroy {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+}
+
+.destroy:hover {
+	background-color: rgba(155, 0, 0, 0.5);
+}
+
+
+.left-page {
+	max-width: 80vw;
+	min-width: 500px;
+}
+
+.playlist-title {
+	font-size: 1.5em;
+	color: rgba(100, 0, 0, 0.4);
+	margin-right: auto;
+}
+
+.song-list {
+	/* display: flex; */
+	box-sizing: border-box;
+	padding-left: .5em;
+	border-left: 1px solid rgba(100, 0, 0, 0.2);
+}
+
+.list-song {
+	display: block;
+	box-sizing: border-box;
+	padding-left: .2em;
+	position: relative;
+}
+
+.list-song::after {
+	display: block;
+	content: " ";
+	border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.list-song .song-title {
+	display: inline-block;
+	color: rgba(0, 0, 0, 1);
+	font-size: 1em;
+	max-height: 1.1em;
+	line-height: 1.1;
+	margin-bottom: -.2em;
+	margin-top: .2em;
+	overflow:hidden;
+}
+
+.list-song .song-info {
+	margin-left: 5%;
+	font-size: .8em;
+}
+
+.list-song.selected {
+	background-color: rgba(0, 0, 0, 0.2);
+}
+
+.list-song.selected .song-title {
+	color: rgba(0, 0, 0, 1.0);
+	overflow: initial;
+}
+
+.action-bar {
+	margin-left: -1em;
+}
+
+.change-page.selected {
+	background-color: #008CBA;
+}
+
+.method.destroy {
+	display: inline-block;
+	color: rgba(255, 0, 0, 1.0);
+}

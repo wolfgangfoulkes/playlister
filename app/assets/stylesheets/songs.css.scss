@@ -2,16 +2,64 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.field.hidden {
-	display: none;
+.wf-row {
+	display: flex;
+	display: -webkit-flex;
 }
 
-.sc-track {
-	font-size: .5em;
-	transition: transform 1s;
+.wf-column {
+	display: flex;
+	display: -webkit-flex;
+	flex-grow: 1;
+	-webkit-flex-grow: 1;
+	flex-direction: column;
+	-webkit-flex-direction: column;
 }
 
-.sc-track:hover {
-	transform: translate(10px, 0px);
-	color: blue;
+.search-results {
+	margin-right: 2%;
 }
+
+.search-results-source {
+	color: rgba(100, 0, 0, 0.2);
+	padding-right: 1em;
+}
+
+.search-result {
+	flex-grow: 1;
+	-webkit-flex-grow: 1;
+	flex-basis: 1.5em;
+	-webkit-flex-basis: 1.5em;
+	overflow: hidden;
+	
+	border-bottom: 1px solid rgba(100, 0, 0, 0.2);
+	position: relative;
+}
+
+.search-result-title {
+	display: inline-block;
+	max-width: 90%;
+	font-size: 1em;
+	line-height: 150%;
+	color: rgba(0, 50, 0, 1);
+}
+
+.search-result.selected .search-result-title {
+	position: absolute;
+	right: 0;
+	color: #008CBA;
+
+}
+
+.search-result .add-song {
+	position: absolute;
+	left: 0;
+	display: inline-block;
+	color: rgba(155, 0, 0, 1);
+}
+
+
+.song-list em {
+	color: rgba(100, 0, 0, 0.4);
+}
+

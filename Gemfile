@@ -46,5 +46,8 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+#youtube api wrapper
+gem 'youtube_it', '~> 2.4.0'
+
 gem 'devise'
 

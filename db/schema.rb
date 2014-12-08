@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141027193651) do
+ActiveRecord::Schema.define(version: 20141208015656) do
 
   create_table "playlists", force: true do |t|
     t.string   "title"
@@ -31,6 +31,12 @@ ActiveRecord::Schema.define(version: 20141027193651) do
     t.string   "sc_permalink"
     t.string   "sc_permalink_url"
     t.string   "sc_uri"
+    t.string   "src_type"
+    t.string   "yt_id"
+    t.string   "yt_etag"
+    t.string   "image_url_small"
+    t.string   "image_url_medium"
+    t.string   "image_url_large"
   end
 
   create_table "users", force: true do |t|
